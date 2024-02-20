@@ -27,3 +27,52 @@
 
 
 ///<reference types="Cypress" />
+
+
+Cypress.Commands.add('getAPI',(pathParam)=>{
+    cy.request({
+        method:'GET',
+        url:'/'+pathParam,
+        headers:{
+            Authorization:"Bearer 43cc56002d15c443892b0a38bc7c459c2bf4b988e559a2a2af16aca1eccf3910"
+        }
+
+    })
+})
+
+
+Cypress.Commands.add('postAPI',(payload)=>{
+    cy.request({
+        method:'POST',
+        url: '/',
+        headers:{
+            Authorization:"Bearer 43cc56002d15c443892b0a38bc7c459c2bf4b988e559a2a2af16aca1eccf3910"
+        },
+        body: payload
+
+    })
+})
+
+
+Cypress.Commands.add('putAPI',(pathParam)=>{
+    cy.request({
+        method:'PUT',
+        url: '/'+pathParam,
+        headers:{
+            Authorization:"Bearer 43cc56002d15c443892b0a38bc7c459c2bf4b988e559a2a2af16aca1eccf3910"
+        }
+
+    })
+})
+
+
+Cypress.Commands.add('deleteAPI',(pathParam)=>{
+    cy.request({
+        method:'DELETE',
+        url: '/'+pathParam,
+        headers:{
+            Authorization:"Bearer 43cc56002d15c443892b0a38bc7c459c2bf4b988e559a2a2af16aca1eccf3910"
+        }
+
+    })
+})
